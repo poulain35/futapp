@@ -7,3 +7,7 @@ home:
 fut:
     path:     /fut
     defaults: { _controller: AppBundle:Fut:index }
+
+connexion:
+    path:     /fut/connect
+    defaults: { _controller: AppBundle:Fut:connect }

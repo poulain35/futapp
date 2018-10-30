@@ -30,6 +30,8 @@ framework:
     assets: ~
     php_errors:
         log: true
+    templating:
+        engines: ['twig']
 
 # Twig Configuration
 twig:
@@ -69,3 +71,18 @@ swiftmailer:
 sensio_framework_extra:
    router:
         annotations: false
+
+monolog:
+    handlers:
+        # this "file_log" key could be anything
+        file_log:
+            type: stream
+            # log to var/logs/(environment).log
+            path: "%kernel.logs_dir%/%kernel.environment%.log"
+            # log *all* messages (debug is lowest level)
+            level: debug
+
+        syslog_handler:
+            type: syslog
+            # log error-level messages and higher
+            level: error

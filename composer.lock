@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f1b4c2ad1c3d31ea29839c11f228353a",
+    "content-hash": "11085b8f0213894c3473d6ea0c949615",
     "packages": [
         {
             "name": "composer/ca-bundle",

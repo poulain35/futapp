@@ -5,6 +5,10 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/src/AppBundle" isTestSource="false" packagePrefix="AppBundle\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/almasaeed2010/adminlte" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/components/bootstrap" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/components/font-awesome" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/components/jquery" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/components/jqueryui" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/annotations" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/cache" />
@@ -28,6 +32,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/inkedcurtis/fut-api" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jdorn/sql-formatter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kriswallsmith/assetic" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/loginForm/css" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/loginForm/fonts" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/loginForm/images" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/loginForm/js" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/loginForm/vendor" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/oomphinc/composer-installers-extender" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/paragonie/random_compat" />

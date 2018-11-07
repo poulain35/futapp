@@ -54,6 +54,15 @@
       <path value="$PROJECT_DIR$/vendor/kriswallsmith/assetic" />
       <path value="$PROJECT_DIR$/vendor/oomphinc/composer-installers-extender" />
       <path value="$PROJECT_DIR$/vendor/almasaeed2010/adminlte" />
+      <path value="$PROJECT_DIR$/vendor/components/jquery" />
+      <path value="$PROJECT_DIR$/vendor/components/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/components/font-awesome" />
+      <path value="$PROJECT_DIR$/vendor/components/jqueryui" />
+      <path value="$PROJECT_DIR$/vendor/loginForm/fonts" />
+      <path value="$PROJECT_DIR$/vendor/loginForm/vendor" />
+      <path value="$PROJECT_DIR$/vendor/loginForm/js" />
+      <path value="$PROJECT_DIR$/vendor/loginForm/css" />
+      <path value="$PROJECT_DIR$/vendor/loginForm/images" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7" />

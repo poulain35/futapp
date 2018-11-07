@@ -1,34 +1,62 @@
-{% extends "FOSUserBundle::layout.html.twig" %}
-
 {% trans_default_domain 'FOSUserBundle' %}
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
 
 {% block fos_user_content %}
     {% if error %}
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    <form action="{{ path("fos_user_security_check") }}" method="post">
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    <form action="{{ path("fos_user_security_check") }}" method="post" class="login100-form validate-form">
+        {% if csrf_token %}
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        {% endif %}
 
-        <div class="form-group">
-            <label for="username">{{ 'security.login.username'|trans }}</label>
-            <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+        <span class="login100-form-title p-b-59">
+            Connexion
+        </span>
+
+        <div class="wrap-input100 validate-input" data-validate="Name is required">
+            <span class="label-input100">{{ 'security.login.username'|trans }}</span>
+            <input class="input100" type="text" id="username" name="_username" value="{{ last_username }}" autocomplete="username">
+            <span class="focus-input100"></span>
         </div>
 
-        <div class="form-group">
-            <label for="password">{{ 'security.login.password'|trans }}</label>
-            <input type="password" id="password" name="_password" required="required" />
+        <div class="wrap-input100 validate-input" data-validate="Name is required">
+            <span class="label-input100">{{ 'security.login.password'|trans }}</span>
+            <input class="input100" type="password" id="password" name="_password" required="required" autocomplete="current-password">
+            <span class="focus-input100"></span>
         </div>
 
-        <div class="checkbox">
-            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-            <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+        <div class="flex-m w-full p-b-33">
+            <div class="contact100-form-checkbox">
+                <input class="input-checkbox100" id="remember_me" type="checkbox" name="_remember_me">
+                <label class="label-checkbox100" for="remember_me">
+								<span class="txt1">
+									{{ 'security.login.remember_me'|trans }}
+								</span>
+                </label>
+            </div>
         </div>
 
-        <input type="submit"
-               class="btn btn-success"
-               id="_submit"
-               name="_submit"
-               value="{{ 'security.login.submit'|trans }}" />
+        <div class="container-login100-form-btn">
+            <div class="wrap-login100-form-btn">
+                <div class="login100-form-bgbtn"></div>
+                <button class="login100-form-btn" id="_submit" name="_submit">
+                    {{ 'security.login.submit'|trans }}
+                </button>
+            </div>
+
+            <a href="#" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
+                Sign in
+                <i class="fa fa-long-arrow-right m-l-5"></i>
+            </a>
+        </div>
     </form>
+    <div class="link_to_change">
+        <a href="{{ path('fos_user_registration_register') }}">S'enregistrer</a>
+    </div>
 {% endblock fos_user_content %}

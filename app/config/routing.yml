@@ -2,6 +2,9 @@ app:
     resource: '@AppBundle/Controller/'
     type: annotation
 
+sbs_adminlte:
+    resource: "@SbSAdminLTEBundle/Resources/config/routing.xml"
+
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 

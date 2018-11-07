@@ -37,6 +37,9 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    globals:
+        admin_lte_skin: "%app.skin%"
+    cache: false
 
 # Doctrine Configuration
 doctrine:
@@ -94,3 +97,10 @@ monolog:
             type: syslog
             # log error-level messages and higher
             level: error
+
+assetic:
+    debug: "%kernel.debug%"
+    use_controller: "%kernel.debug%"
+    bundles: []
+    filters:
+        cssrewrite: ~

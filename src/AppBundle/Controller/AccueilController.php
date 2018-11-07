@@ -13,7 +13,9 @@ class AccueilController extends Controller
      */
     public function indexAction()
     {
-        return new Response("Notre propre Hello World !");
+        $content = $this->container->get('templating')->render('AppBundle:Fut:index.html.twig');
+
+        return new Response($content);
     }
 
 }

@@ -1,5 +1,40 @@
-{% extends "@FOSUser/layout.html.twig" %}
+{% trans_default_domain 'FOSUserBundle' %}
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
 
 {% block fos_user_content %}
-{% include "@FOSUser/Registration/register_content.html.twig" %}
+    <form action="{{ path("fos_user_registration_register") }}" method="post" class="login100-form validate-form">
+
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+
+        <div class="wrap-input100 validate-input">
+            <span class="label-input100">{{ form_label(form.username) }}</span>
+            {{ form_errors(form.username) }}
+            {{ form_widget(form.username, { 'attr': {'class': 'input100'} }) }}
+        </div>
+
+        <div class="wrap-input100 validate-input">
+            <span class="label-input100">{{ form_label(form.email) }}</span>
+            {{ form_errors(form.email) }}
+            {{ form_widget(form.email) }}
+        </div>
+
+
+        <button class="btn-large waves-effect waves-light" type="submit" name="action">
+            {{ 'registration.submit'|trans }}
+            <i class="material-icons">send</i>
+        </button>
+
+        {{ form_end(form) }}
+
+
+
+    </form>
+    <div class="link_to_change">
+        <a href="{{ path('fos_user_registration_register') }}">S'enregistrer</a>
+    </div>
 {% endblock fos_user_content %}

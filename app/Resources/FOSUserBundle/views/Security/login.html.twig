@@ -19,13 +19,13 @@
             Connexion
         </span>
 
-        <div class="wrap-input100 validate-input" data-validate="Name is required">
-            <span class="label-input100">{{ 'security.login.username'|trans }}</span>
-            <input class="input100" type="text" id="username" name="_username" value="{{ last_username }}" autocomplete="username">
+        <div class="wrap-input100 validate-input" data-validate="Saisissez un nom d'utilisateur">
+            <span class="label-input100">{{ 'security.login.email'|trans }}</span>
+            <input class="input100" type="text" id="email" name="_email" value="{{ last_username }}" autocomplete="email">
             <span class="focus-input100"></span>
         </div>
 
-        <div class="wrap-input100 validate-input" data-validate="Name is required">
+        <div class="wrap-input100 validate-input" data-validate="Saisissez un mot de passe">
             <span class="label-input100">{{ 'security.login.password'|trans }}</span>
             <input class="input100" type="password" id="password" name="_password" required="required" autocomplete="current-password">
             <span class="focus-input100"></span>

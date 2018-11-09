@@ -22,10 +22,56 @@ class User extends BaseUser
     /**
      * @ORM\Column(type="string")
      */
-    protected $addresse;
+    protected $nom;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $prenom;
 
     public function __construct()
     {
         parent::__construct();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * @param mixed $nom
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * @param mixed $prenom
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+    }
+
+    /**
+     * @param mixed $email
+     * surcharge pour passer l'email dans le username
+     */
+    public function setEmail($email){
+        parent::setEmail($email);
+        parent::setUsername($email);
     }
 }

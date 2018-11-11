@@ -1,5 +1,7 @@
 {
   "name": "futapp",
+  "author": "Jeremy Poulain poulain.jeremy1@gmail.com",
+  "private": true,
   "version": "1.0.0",
   "description": "Symfony Standard Edition ========================",
   "main": "index.js",
@@ -9,7 +11,9 @@
   "dependencies": {
     "mdbootstrap": "^4.5.13"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@symfony/webpack-encore": "^0.21.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

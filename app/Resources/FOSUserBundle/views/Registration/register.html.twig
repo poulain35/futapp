@@ -6,10 +6,27 @@
 {% endblock %}
 
 {% block fos_user_content %}
+
+    <div class="d-flex justify-content-center btn-group" data-toggle="buttons">
+        <label class="btn btn-light-blue form-check-label">
+            <input class="form-check-input" type="radio" name="options" id="connexion" autocomplete="off"> Se connecter
+        </label>
+        <label class="btn btn-light-blue form-check-label active">
+            <input class="form-check-input" type="radio" name="options" id="register" autocomplete="off" onclick=""> S'inscrire
+        </label>
+    </div>
+    <br/>
+
     <form action="{{ path("fos_user_registration_register") }}" method="post" class="login100-form validate-form">
 
         {{ form_start(form) }}
         {{ form_errors(form) }}
+
+        <div class="wrap-input100 validate-input">
+            <span class="label-input100">{{ form_label(form.nom) }}</span>
+            {{ form_errors(form.nom) }}
+            {{ form_widget(form.nom, { 'attr': {'class': 'input100'} }) }}
+        </div>
 
         <div class="wrap-input100 validate-input">
             <span class="label-input100">{{ form_label(form.username) }}</span>
@@ -20,9 +37,20 @@
         <div class="wrap-input100 validate-input">
             <span class="label-input100">{{ form_label(form.email) }}</span>
             {{ form_errors(form.email) }}
-            {{ form_widget(form.email) }}
+            {{ form_widget(form.email, { 'attr': {'class': 'input100'} }) }}
         </div>
 
+        <div class="wrap-input100 validate-input">
+            <span class="label-input100">{{ form_label(form.plainPassword.first) }}</span>
+            {{ form_errors(form.plainPassword.first) }}
+            {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'input100'} }) }}
+        </div>
+
+        <div class="wrap-input100 validate-input">
+            <span class="label-input100">{{ form_label(form.plainPassword.second) }}</span>
+            {{ form_errors(form.plainPassword.second) }}
+            {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'input100'} }) }}
+        </div>
 
         <button class="btn-large waves-effect waves-light" type="submit" name="action">
             {{ 'registration.submit'|trans }}
@@ -30,9 +58,6 @@
         </button>
 
         {{ form_end(form) }}
-
-
-
     </form>
     <div class="link_to_change">
         <a href="{{ path('fos_user_registration_register') }}">S'enregistrer</a>

@@ -10,6 +10,16 @@
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
+    <div class="d-flex justify-content-center btn-group" data-toggle="buttons">
+        <label class="btn btn-light-blue form-check-label active">
+            <input class="form-check-input" type="radio" name="options" id="connexion" autocomplete="off"> Se connecter
+        </label>
+        <label class="btn btn-light-blue form-check-label">
+            <input class="form-check-input" type="radio" name="options" id="register" autocomplete="off"> S'inscrire
+        </label>
+    </div>
+    <br/>
+
     <form action="{{ path("fos_user_security_check") }}" method="post" class="login100-form validate-form">
         {% if csrf_token %}
             <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />

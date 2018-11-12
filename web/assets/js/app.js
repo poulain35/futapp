@@ -1,5 +1,4 @@
 // public/assets/js/app.js
 
 require('../css/app.css');
-
-console.log('Hello Webpack Encore');
+require('../../../node_modules/mdbootstrap/css/mdb.css');

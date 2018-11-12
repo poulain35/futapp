@@ -18,6 +18,7 @@
         <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
         <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
         <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('build/app.css') }}">
     {% endblock %}
 
 </head>
@@ -30,14 +31,6 @@
             <div class="login100-more" style="background-image: url('images/bg-01.jpg');"></div>
 
             <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-
-                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                    <div class="btn-group mr-2" role="group" aria-label="First group">
-                        <button type="button" class="btn btn-secondary">Se connecter</button>
-                        <button type="button" class="btn btn-secondary">S'inscrire</button>
-                    </div>
-                </div>
-
                 {% block fos_user_content %}{% endblock %}
             </div>
         </div>
@@ -51,7 +44,7 @@
         <script src="vendor/select2/select2.min.js"></script>
         <script src="vendor/daterangepicker/moment.min.js"></script>
         <script src="vendor/daterangepicker/daterangepicker.js"></script>
-        <script src="vendor/countdowntime/countdowntime.js"></script>
+        <script src="vendor/countdowntimsecurity.login.emaile/countdowntime.js"></script>
         <script src="js/main.js"></script>
     {% endblock %}
 

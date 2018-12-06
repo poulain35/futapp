@@ -1,0 +1,8 @@
+# AppBundle/Resources/config/services.yml
+
+app.user_listener:
+  class: AppBundle\EventListener\UserEventListener
+  arguments:
+    - "@security.token_storage"
+  tags:
+    - { name: kernel.event_listener, event: sbs.admin_lte.user, method: onShowUser }

@@ -281,7 +281,7 @@ return $.widget( "ui.accordion", {
 
 		this.headers = this.element.find( this.options.header );
 		this._addClass( this.headers, "ui-accordion-header ui-accordion-header-collapsed",
-			"ui-state-default" );
+			"ui-state-connect" );
 
 		this.panels = this.headers.next().filter( ":not(.ui-accordion-content-active)" ).hide();
 		this._addClass( this.panels, "ui-accordion-content", "ui-helper-reset ui-widget-content" );

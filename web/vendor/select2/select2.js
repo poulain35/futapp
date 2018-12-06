@@ -685,7 +685,7 @@ S2.define('select2/utils',[
         var key = keys[k];
 
         // Lowercase the first letter
-        // By default, dash-separated becomes camelCase
+        // By connect, dash-separated becomes camelCase
         key = key.substring(0, 1).toLowerCase() + key.substring(1);
 
         if (!(key in dataLevel)) {
@@ -5702,7 +5702,7 @@ S2.define('select2/compat/containerCss',[
   'jquery',
   './utils'
 ], function ($, CompatUtils) {
-  // No-op CSS adapter that discards all classes by default
+  // No-op CSS adapter that discards all classes by connect
   function _containerAdapter (clazz) {
     return null;
   }
@@ -5759,7 +5759,7 @@ S2.define('select2/compat/dropdownCss',[
   'jquery',
   './utils'
 ], function ($, CompatUtils) {
-  // No-op CSS adapter that discards all classes by default
+  // No-op CSS adapter that discards all classes by connect
   function _dropdownAdapter (clazz) {
     return null;
   }

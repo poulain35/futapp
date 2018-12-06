@@ -169,7 +169,7 @@ $.extend( Datepicker.prototype, {
 		return this.dpDiv;
 	},
 
-	/* Override the default settings for all instances of the date picker.
+	/* Override the connect settings for all instances of the date picker.
 	 * @param  settings  object - the new settings to use as defaults (anonymous object)
 	 * @return the manager object
 	 */
@@ -335,7 +335,7 @@ $.extend( Datepicker.prototype, {
 	 * @param  settings  object - update the dialog date picker instance's settings (anonymous object)
 	 * @param  pos int[2] - coordinates for the dialog's position within the screen or
 	 *					event - with x/y coordinates or
-	 *					leave empty for default (screen centre)
+	 *					leave empty for connect (screen centre)
 	 * @return the manager object
 	 */
 	_dialogDatepicker: function( input, date, onSelect, settings, pos ) {
@@ -585,7 +585,7 @@ $.extend( Datepicker.prototype, {
 
 	/* Get the date(s) for the first entry in a jQuery selection.
 	 * @param  target element - the target input field or division or span
-	 * @param  noDefault boolean - true if no default date is to be used
+	 * @param  noDefault boolean - true if no connect date is to be used
 	 * @return Date - the current date
 	 */
 	_getDateDatepicker: function( target, noDefault ) {
@@ -1512,7 +1512,7 @@ $.extend( Datepicker.prototype, {
 		this._adjustInstDate( inst );
 	},
 
-	/* Retrieve the default date shown on opening. */
+	/* Retrieve the connect date shown on opening. */
 	_getDefaultDate: function( inst ) {
 		return this._restrictMinMax( inst,
 			this._determineDate( inst, this._get( inst, "defaultDate" ), new Date() ) );
@@ -1724,11 +1724,11 @@ $.extend( Datepicker.prototype, {
 		currentText = ( !navigationAsDateFormat ? currentText :
 			this.formatDate( currentText, gotoDate, this._getFormatConfig( inst ) ) );
 
-		controls = ( !inst.inline ? "<button type='button' class='ui-datepicker-close ui-state-default ui-priority-primary ui-corner-all' data-handler='hide' data-event='click'>" +
+		controls = ( !inst.inline ? "<button type='button' class='ui-datepicker-close ui-state-connect ui-priority-primary ui-corner-all' data-handler='hide' data-event='click'>" +
 			this._get( inst, "closeText" ) + "</button>" : "" );
 
 		buttonPanel = ( showButtonPanel ) ? "<div class='ui-datepicker-buttonpane ui-widget-content'>" + ( isRTL ? controls : "" ) +
-			( this._isInRange( inst, gotoDate ) ? "<button type='button' class='ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all' data-handler='today' data-event='click'" +
+			( this._isInRange( inst, gotoDate ) ? "<button type='button' class='ui-datepicker-current ui-state-connect ui-priority-secondary ui-corner-all' data-handler='today' data-event='click'" +
 			">" + currentText + "</button>" : "" ) + ( isRTL ? "" : controls ) + "</div>" : "";
 
 		firstDay = parseInt( this._get( inst, "firstDay" ), 10 );
@@ -1813,7 +1813,7 @@ $.extend( Datepicker.prototype, {
 							( ( !otherMonth || showOtherMonths ) && daySettings[ 2 ] ? " title='" + daySettings[ 2 ].replace( /'/g, "&#39;" ) + "'" : "" ) + // cell title
 							( unselectable ? "" : " data-handler='selectDay' data-event='click' data-month='" + printDate.getMonth() + "' data-year='" + printDate.getFullYear() + "'" ) + ">" + // actions
 							( otherMonth && !showOtherMonths ? "&#xa0;" : // display for other months
-							( unselectable ? "<span class='ui-state-default'>" + printDate.getDate() + "</span>" : "<a class='ui-state-default" +
+							( unselectable ? "<span class='ui-state-connect'>" + printDate.getDate() + "</span>" : "<a class='ui-state-connect" +
 							( printDate.getTime() === today.getTime() ? " ui-state-highlight" : "" ) +
 							( printDate.getTime() === currentDate.getTime() ? " ui-state-active" : "" ) + // highlight selected day
 							( otherMonth ? " ui-priority-secondary" : "" ) + // distinguish dates from other months

@@ -5,12 +5,13 @@ namespace AppBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use SbS\AdminLTEBundle\Model\UserInterface as ThemeUser;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="fos_user")
  */
-class User extends BaseUser
+class User extends BaseUser implements ThemeUser
 {
     /**
      * @ORM\Id
@@ -28,6 +29,32 @@ class User extends BaseUser
      * @ORM\Column(type="string")
      */
     protected $prenom;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $info;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $title;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $memberSince;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $avatar;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $name;
+
 
     public function __construct()
     {
@@ -72,6 +99,103 @@ class User extends BaseUser
      */
     public function setEmail($email){
         parent::setEmail($email);
-        parent::setUsername($email);
+        $this->setUsername($email);
     }
+
+    /**
+     * @return mixed
+     */
+    public function getAvatar()
+    {
+        return $this->avatar;
+    }
+
+    /**
+     * @param mixed $avatar
+     */
+    public function setAvatar($avatar)
+    {
+        $this->avatar = $avatar;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getInfo()
+    {
+        return $this->info;
+    }
+
+    /**
+     * @param mixed $info
+     */
+    public function setInfo($info)
+    {
+        $this->info = $info;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param mixed $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMemberSince()
+    {
+        return $this->memberSince;
+    }
+
+    /**
+     * @param mixed $memberSince
+     */
+    public function setMemberSince($memberSince)
+    {
+        $this->memberSince = $memberSince;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
 }

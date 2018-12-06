@@ -1,6 +1,6 @@
 {
   "name": "futapp",
-  "author": "Jeremy Poulain poulain.jeremy1@gmail.com",
+  "author": "",
   "private": true,
   "version": "1.0.0",
   "description": "Symfony Standard Edition ========================",
@@ -9,7 +9,7 @@
     "test": "tests"
   },
   "dependencies": {
-    "mdbootstrap": "^4.5.13"
+    "mdbootstrap": "^4.5.15"
   },
   "devDependencies": {
     "@symfony/webpack-encore": "^0.21.0"
@@ -24,7 +24,6 @@
     "type": "git",
     "url": "git+https://github.com/poulain35/futapp.git"
   },
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/poulain35/futapp/issues"

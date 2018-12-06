@@ -30,7 +30,7 @@
 }(this, function(moment, $) {
     var DateRangePicker = function(element, options, cb) {
 
-        //default settings for options
+        //connect settings for options
         this.parentEl = 'body';
         this.element = $(element);
         this.startDate = moment().startOf('day');
@@ -63,7 +63,7 @@
 
         this.buttonClasses = 'btn btn-sm';
         this.applyClass = 'btn-success';
-        this.cancelClass = 'btn-default';
+        this.cancelClass = 'btn-connect';
 
         this.locale = {
             direction: 'ltr',

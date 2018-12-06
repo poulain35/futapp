@@ -4,7 +4,7 @@ parameters:
     #parameter_name: value
 
 services:
-    # default configuration for services in *this* file
+    # connect configuration for services in *this* file
     _defaults:
         # automatically injects dependencies in your services
         autowire: true
@@ -37,3 +37,16 @@ services:
         class: AppBundle\Form\RegistrationType
         tags:
         - { name: form.type, alias: app_user_registration }
+
+    AppBundle\EventListener\UserEventListener:
+        tags:
+        - { name: kernel.event_listener, event: sbs.admin_lte.user, method: onShowUser }
+    AppBundle\EventListener\TaskListEventListener:
+        tags:
+        - { name: kernel.event_listener, event: sbs.admin_lte.tasks, method: onListTasks }
+    AppBundle\EventListener\NotificationListEventListener:
+        tags:
+        - { name: kernel.event_listener, event: sbs.admin_lte.notifications, method: onListNotifications }
+    AppBundle\EventListener\SidebarMenuEventListener:
+        tags:
+        - { name: kernel.event_listener, event: sbs.admin_lte.sidebar_menu, method: onShowMenu }

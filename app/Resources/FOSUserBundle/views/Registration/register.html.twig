@@ -1,5 +1,7 @@
 {% trans_default_domain 'FOSUserBundle' %}
-{% extends "::base.html.twig" %}
+{% extends "login/layout.html.twig" %}
+
+{% block title %}Créer un compte FUTApp{% endblock %}
 
 {% block stylesheets %}
     {{ parent() }}
@@ -26,30 +28,35 @@
             <span class="label-input100">{{ form_label(form.nom) }}</span>
             {{ form_errors(form.nom) }}
             {{ form_widget(form.nom, { 'attr': {'class': 'input100'} }) }}
+            <span class="focus-input100"></span>
         </div>
 
         <div class="wrap-input100 validate-input">
             <span class="label-input100">{{ form_label(form.prenom) }}</span>
             {{ form_errors(form.prenom) }}
             {{ form_widget(form.prenom, { 'attr': {'class': 'input100'} }) }}
+            <span class="focus-input100"></span>
         </div>
 
         <div class="wrap-input100 validate-input">
             <span class="label-input100">{{ form_label(form.email) }}</span>
             {{ form_errors(form.email) }}
             {{ form_widget(form.email, { 'attr': {'class': 'input100'} }) }}
+            <span class="focus-input100"></span>
         </div>
 
         <div class="wrap-input100 validate-input">
             <span class="label-input100">{{ form_label(form.plainPassword.first) }}</span>
             {{ form_errors(form.plainPassword.first) }}
             {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'input100'} }) }}
+            <span class="focus-input100"></span>
         </div>
 
         <div class="wrap-input100 validate-input">
             <span class="label-input100">{{ form_label(form.plainPassword.second) }}</span>
             {{ form_errors(form.plainPassword.second) }}
             {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'input100'} }) }}
+            <span class="focus-input100"></span>
         </div>
 
         <div class="container-login100-form-btn">

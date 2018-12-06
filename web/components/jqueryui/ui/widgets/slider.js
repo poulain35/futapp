@@ -112,7 +112,7 @@ return $.widget( "ui.slider", $.ui.mouse, {
 
 		this.handles = existingHandles.add( $( handles.join( "" ) ).appendTo( this.element ) );
 
-		this._addClass( this.handles, "ui-slider-handle", "ui-state-default" );
+		this._addClass( this.handles, "ui-slider-handle", "ui-state-connect" );
 
 		this.handle = this.handles.eq( 0 );
 

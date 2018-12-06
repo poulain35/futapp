@@ -5,6 +5,20 @@ app:
 sbs_adminlte:
     resource: "@SbSAdminLTEBundle/Resources/config/routing.xml"
 
+sbs_adminlte_user_profile:
+    path: /user/profile
+    defaults: {_controller: AppBundle:Accueil:index}
+sbs_adminlte_user_logout:
+    path: /logout
+sbs_adminlte_show_task:
+    path: /task/{taskId}
+sbs_adminlte_all_tasks:
+    path: /tasks
+sbs_adminlte_show_notification:
+    path: /notification/{noticeId}
+sbs_adminlte_all_notifications:
+    path: /notifications
+
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 

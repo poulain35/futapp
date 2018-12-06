@@ -1,12 +1,8 @@
 # src/AppBundle/Resources/config/routing.yml
 
-home:
-    path:     /home
+connect:
+    path:     /connect
     defaults: { _controller: AppBundle:Accueil:index }
-
-fut:
-    path:     /fut
-    defaults: { _controller: AppBundle:Fut:index }
 
 connexion:
     path:     /fut/connect

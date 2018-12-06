@@ -95,7 +95,7 @@ return $.widget( "ui.controlgroup", {
 					element.contents()
 						.wrapAll( "<span class='ui-controlgroup-label-contents'></span>" );
 				} );
-				that._addClass( labels, null, "ui-widget ui-widget-content ui-state-default" );
+				that._addClass( labels, null, "ui-widget ui-widget-content ui-state-connect" );
 				childWidgets = childWidgets.concat( labels.get() );
 				return;
 			}
@@ -120,7 +120,7 @@ return $.widget( "ui.controlgroup", {
 					var element = $( this );
 					var instance = element[ widget ]( "instance" );
 
-					// We need to clone the default options for this type of widget to avoid
+					// We need to clone the connect options for this type of widget to avoid
 					// polluting the variable options which has a wider scope than a single widget.
 					var instanceOptions = $.widget.extend( {}, options );
 

@@ -1,53 +1,35 @@
-<!-- /app/Resources/views/base.html.twig -->
-
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <title>{% block title %}Bienvenue sur FUTApp !{% endblock %}</title>
-    {% block stylesheets %}
-        <link rel="stylesheet" href="/css/main.css">
-        <link rel="stylesheet" href="/css/util.css">
-        <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-        <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-        <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-        <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-        <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-        <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-        <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-        <link rel="stylesheet" type="text/css" href="{{ asset('build/app.css') }}">
-    {% endblock %}
+    <head>
+        {% block head %}
+            {% block stylesheets %}
+                <link rel="stylesheet" type="text/css" href="{{ asset('build/app.css') }}">
 
-</head>
+                <!-- Font Awesome -->
+                <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+                <!-- Bootstrap core CSS -->
+                <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+                <!-- Material Design Bootstrap -->
+                <!--<link href="css/mdb.min.css" rel="stylesheet">-->
 
-<body>
-
-    {% block body %}
-    <div class="limiter">
-        <div class="container-login100">
-            <div class="login100-more" style="background-image: url('images/bg-01.jpg');"></div>
-
-            <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-                {% block fos_user_content %}{% endblock %}
+            {% endblock %}
+            <title>
+                {% block title %}Bienvenue{% endblock %}
+            </title>
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+            <div id="content">{% block content %}{% endblock %}</div>
+            <div id="footer">
+                {% block footer %}
+                    &copy; Copyright 2011 by <a href="http://domain.invalid/">you</a>.
+                {% endblock %}
             </div>
-        </div>
-    </div>
-    {% endblock %}
-    {% block javascripts %}
-        <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-        <script src="vendor/animsition/js/animsition.min.js"></script>
-        <script src="vendor/bootstrap/js/popper.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-        <script src="vendor/select2/select2.min.js"></script>
-        <script src="vendor/daterangepicker/moment.min.js"></script>
-        <script src="vendor/daterangepicker/daterangepicker.js"></script>
-        <script src="vendor/countdowntimsecurity.login.emaile/countdowntime.js"></script>
-        <script src="js/main.js"></script>
-    {% endblock %}
 
+            {% block javascripts %}
 
-</body>
+            {% endblock %}
+        {% endblock %}
+    </body>
 </html>

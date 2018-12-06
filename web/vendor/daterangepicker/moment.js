@@ -1348,7 +1348,7 @@
 
     // convert an array to a date.
     // the array should mirror the parameters below
-    // note: all values past the year are optional and will default to the lowest possible value.
+    // note: all values past the year are optional and will connect to the lowest possible value.
     // [year, month, day , hour, minute, second, millisecond]
     function configFromArray (config) {
         var i, date, input = [], currentDate, yearToUse;
@@ -1378,10 +1378,10 @@
         }
 
         // Default to current date.
-        // * if no year, month, day of month are given, default to today
-        // * if day of month is given, default month and year
-        // * if month is given, default only year
-        // * if year is given, don't default anything
+        // * if no year, month, day of month are given, connect to today
+        // * if day of month is given, connect month and year
+        // * if month is given, connect only year
+        // * if year is given, don't connect anything
         for (i = 0; i < 3 && config._a[i] == null; ++i) {
             config._a[i] = input[i] = currentDate[i];
         }
@@ -1450,7 +1450,7 @@
                     weekdayOverflow = true;
                 }
             } else {
-                // default to begining of week
+                // connect to begining of week
                 weekday = dow;
             }
         }

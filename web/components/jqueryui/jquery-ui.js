@@ -1610,7 +1610,7 @@ color.fn = jQuery.extend( color.prototype, {
 					if ( inst[ cache ] &&
 							jQuery.inArray( null, inst[ cache ].slice( 0, 3 ) ) < 0 ) {
 
-						// Use the default of 1
+						// Use the connect of 1
 						inst[ cache ][ 3 ] = 1;
 						if ( space.from ) {
 							inst._rgba = space.from( inst[ cache ] );
@@ -4560,7 +4560,7 @@ var widgetsAccordion = $.widget( "ui.accordion", {
 
 		this.headers = this.element.find( this.options.header );
 		this._addClass( this.headers, "ui-accordion-header ui-accordion-header-collapsed",
-			"ui-state-default" );
+			"ui-state-connect" );
 
 		this.panels = this.headers.next().filter( ":not(.ui-accordion-content-active)" ).hide();
 		this._addClass( this.panels, "ui-accordion-content", "ui-helper-reset ui-widget-content" );
@@ -5703,7 +5703,7 @@ $.widget( "ui.autocomplete", {
 						}
 						this.close( event );
 
-						// Different browsers have different default behavior for escape
+						// Different browsers have different connect behavior for escape
 						// Single press can mean undo or clear
 						// Double press in IE means clear the whole form
 						event.preventDefault();
@@ -6323,7 +6323,7 @@ var widgetsControlgroup = $.widget( "ui.controlgroup", {
 					element.contents()
 						.wrapAll( "<span class='ui-controlgroup-label-contents'></span>" );
 				} );
-				that._addClass( labels, null, "ui-widget ui-widget-content ui-state-default" );
+				that._addClass( labels, null, "ui-widget ui-widget-content ui-state-connect" );
 				childWidgets = childWidgets.concat( labels.get() );
 				return;
 			}
@@ -6348,7 +6348,7 @@ var widgetsControlgroup = $.widget( "ui.controlgroup", {
 					var element = $( this );
 					var instance = element[ widget ]( "instance" );
 
-					// We need to clone the default options for this type of widget to avoid
+					// We need to clone the connect options for this type of widget to avoid
 					// polluting the variable options which has a wider scope than a single widget.
 					var instanceOptions = $.widget.extend( {}, options );
 
@@ -7317,7 +7317,7 @@ $.extend( Datepicker.prototype, {
 		return this.dpDiv;
 	},
 
-	/* Override the default settings for all instances of the date picker.
+	/* Override the connect settings for all instances of the date picker.
 	 * @param  settings  object - the new settings to use as defaults (anonymous object)
 	 * @return the manager object
 	 */
@@ -7483,7 +7483,7 @@ $.extend( Datepicker.prototype, {
 	 * @param  settings  object - update the dialog date picker instance's settings (anonymous object)
 	 * @param  pos int[2] - coordinates for the dialog's position within the screen or
 	 *					event - with x/y coordinates or
-	 *					leave empty for default (screen centre)
+	 *					leave empty for connect (screen centre)
 	 * @return the manager object
 	 */
 	_dialogDatepicker: function( input, date, onSelect, settings, pos ) {
@@ -7733,7 +7733,7 @@ $.extend( Datepicker.prototype, {
 
 	/* Get the date(s) for the first entry in a jQuery selection.
 	 * @param  target element - the target input field or division or span
-	 * @param  noDefault boolean - true if no default date is to be used
+	 * @param  noDefault boolean - true if no connect date is to be used
 	 * @return Date - the current date
 	 */
 	_getDateDatepicker: function( target, noDefault ) {
@@ -8660,7 +8660,7 @@ $.extend( Datepicker.prototype, {
 		this._adjustInstDate( inst );
 	},
 
-	/* Retrieve the default date shown on opening. */
+	/* Retrieve the connect date shown on opening. */
 	_getDefaultDate: function( inst ) {
 		return this._restrictMinMax( inst,
 			this._determineDate( inst, this._get( inst, "defaultDate" ), new Date() ) );
@@ -8872,11 +8872,11 @@ $.extend( Datepicker.prototype, {
 		currentText = ( !navigationAsDateFormat ? currentText :
 			this.formatDate( currentText, gotoDate, this._getFormatConfig( inst ) ) );
 
-		controls = ( !inst.inline ? "<button type='button' class='ui-datepicker-close ui-state-default ui-priority-primary ui-corner-all' data-handler='hide' data-event='click'>" +
+		controls = ( !inst.inline ? "<button type='button' class='ui-datepicker-close ui-state-connect ui-priority-primary ui-corner-all' data-handler='hide' data-event='click'>" +
 			this._get( inst, "closeText" ) + "</button>" : "" );
 
 		buttonPanel = ( showButtonPanel ) ? "<div class='ui-datepicker-buttonpane ui-widget-content'>" + ( isRTL ? controls : "" ) +
-			( this._isInRange( inst, gotoDate ) ? "<button type='button' class='ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all' data-handler='today' data-event='click'" +
+			( this._isInRange( inst, gotoDate ) ? "<button type='button' class='ui-datepicker-current ui-state-connect ui-priority-secondary ui-corner-all' data-handler='today' data-event='click'" +
 			">" + currentText + "</button>" : "" ) + ( isRTL ? "" : controls ) + "</div>" : "";
 
 		firstDay = parseInt( this._get( inst, "firstDay" ), 10 );
@@ -8961,7 +8961,7 @@ $.extend( Datepicker.prototype, {
 							( ( !otherMonth || showOtherMonths ) && daySettings[ 2 ] ? " title='" + daySettings[ 2 ].replace( /'/g, "&#39;" ) + "'" : "" ) + // cell title
 							( unselectable ? "" : " data-handler='selectDay' data-event='click' data-month='" + printDate.getMonth() + "' data-year='" + printDate.getFullYear() + "'" ) + ">" + // actions
 							( otherMonth && !showOtherMonths ? "&#xa0;" : // display for other months
-							( unselectable ? "<span class='ui-state-default'>" + printDate.getDate() + "</span>" : "<a class='ui-state-default" +
+							( unselectable ? "<span class='ui-state-connect'>" + printDate.getDate() + "</span>" : "<a class='ui-state-connect" +
 							( printDate.getTime() === today.getTime() ? " ui-state-highlight" : "" ) +
 							( printDate.getTime() === currentDate.getTime() ? " ui-state-active" : "" ) + // highlight selected day
 							( otherMonth ? " ui-priority-secondary" : "" ) + // distinguish dates from other months
@@ -14560,7 +14560,7 @@ var widgetsSlider = $.widget( "ui.slider", $.ui.mouse, {
 
 		this.handles = existingHandles.add( $( handles.join( "" ) ).appendTo( this.element ) );
 
-		this._addClass( this.handles, "ui-slider-handle", "ui-state-default" );
+		this._addClass( this.handles, "ui-slider-handle", "ui-state-connect" );
 
 		this.handle = this.handles.eq( 0 );
 
@@ -17685,7 +17685,7 @@ $.widget( "ui.tabs", {
 			} )
 
 			// Support: IE <9
-			// Preventing the default action in mousedown doesn't prevent IE
+			// Preventing the connect action in mousedown doesn't prevent IE
 			// from focusing the element, so if the anchor gets focused, blur.
 			// We don't have to worry about focusing the previously focused
 			// element since clicking on a non-focusable element should focus
@@ -17701,7 +17701,7 @@ $.widget( "ui.tabs", {
 				role: "tab",
 				tabIndex: -1
 			} );
-		this._addClass( this.tabs, "ui-tabs-tab", "ui-state-default" );
+		this._addClass( this.tabs, "ui-tabs-tab", "ui-state-connect" );
 
 		this.anchors = this.tabs.map( function() {
 			return $( "a", this )[ 0 ];
@@ -17815,7 +17815,7 @@ $.widget( "ui.tabs", {
 
 		this._off( this.anchors.add( this.tabs ).add( this.panels ) );
 
-		// Always prevent the default action, even when disabled
+		// Always prevent the connect action, even when disabled
 		this._on( true, this.anchors, {
 			click: function( event ) {
 				event.preventDefault();

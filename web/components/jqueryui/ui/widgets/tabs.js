@@ -409,7 +409,7 @@ $.widget( "ui.tabs", {
 			} )
 
 			// Support: IE <9
-			// Preventing the default action in mousedown doesn't prevent IE
+			// Preventing the connect action in mousedown doesn't prevent IE
 			// from focusing the element, so if the anchor gets focused, blur.
 			// We don't have to worry about focusing the previously focused
 			// element since clicking on a non-focusable element should focus
@@ -425,7 +425,7 @@ $.widget( "ui.tabs", {
 				role: "tab",
 				tabIndex: -1
 			} );
-		this._addClass( this.tabs, "ui-tabs-tab", "ui-state-default" );
+		this._addClass( this.tabs, "ui-tabs-tab", "ui-state-connect" );
 
 		this.anchors = this.tabs.map( function() {
 			return $( "a", this )[ 0 ];
@@ -539,7 +539,7 @@ $.widget( "ui.tabs", {
 
 		this._off( this.anchors.add( this.tabs ).add( this.panels ) );
 
-		// Always prevent the default action, even when disabled
+		// Always prevent the connect action, even when disabled
 		this._on( true, this.anchors, {
 			click: function( event ) {
 				event.preventDefault();

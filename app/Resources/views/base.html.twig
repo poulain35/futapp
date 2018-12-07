@@ -2,25 +2,21 @@
 <html lang="fr">
     <head>
         {% block head %}
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>
+                {% block title %}{% endblock %}
+            </title>
             {% block stylesheets %}
                 <link rel="stylesheet" type="text/css" href="{{ asset('build/app.css') }}">
-
                 <!-- Font Awesome -->
                 <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-                <!-- Bootstrap core CSS -->
-                <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-                <!-- Material Design Bootstrap -->
-                <!--<link href="css/mdb.min.css" rel="stylesheet">-->
-
             {% endblock %}
-            <title>
-                {% block title %}Bienvenue{% endblock %}
-            </title>
         {% endblock %}
     </head>
     <body>
         {% block body %}
-            <div id="content">{% block content %}{% endblock %}</div>
+            <div id="content bg-login">{% block content %}{% endblock %}</div>
             <div id="footer">
                 {% block footer %}
                     &copy; Copyright 2011 by <a href="http://domain.invalid/">you</a>.
@@ -28,7 +24,6 @@
             </div>
 
             {% block javascripts %}
-
             {% endblock %}
         {% endblock %}
     </body>
